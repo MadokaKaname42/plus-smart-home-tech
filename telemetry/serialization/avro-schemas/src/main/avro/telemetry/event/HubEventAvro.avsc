@@ -1,0 +1,31 @@
+{
+  "type": "record",
+  "name": "HubEventAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Корневое событие хаба. Это то, что реально кладётся в Kafka топик telemetry.hubs.v1. Содержит общие поля + payload с конкретным типом события",
+  "fields": [
+    {
+      "name": "hub_id",
+      "type": "string",
+      "doc": "Идентификатор хаба, от которого пришло событие"
+    },
+    {
+      "name": "timestamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "Временная метка события в миллисекундах"
+    },
+    {
+      "name": "payload",
+      "type": [
+        "DeviceAddedEventAvro",
+        "DeviceRemovedEventAvro",
+        "ScenarioAddedEventAvro",
+        "ScenarioRemovedEventAvro"
+      ],
+      "doc": "Тело события. Avro определит конкретный тип автоматически при сериализации"
+    }
+  ]
+}

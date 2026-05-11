@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "LightSensorAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Данные датчика освещённости",
+  "fields": [
+    {
+      "name": "link_quality",
+      "type": "int",
+      "doc": "Качество сигнала связи с хабом (0-100)"
+    },
+    {
+      "name": "luminosity",
+      "type": "int",
+      "doc": "Уровень освещённости в люксах"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "TemperatureSensorAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Данные датчика температуры",
+  "fields": [
+    {
+      "name": "temperature_c",
+      "type": "int",
+      "doc": "Температура в градусах Цельсия"
+    },
+    {
+      "name": "temperature_f",
+      "type": "int",
+      "doc": "Температура в градусах Фаренгейта"
+    }
+  ]
+}

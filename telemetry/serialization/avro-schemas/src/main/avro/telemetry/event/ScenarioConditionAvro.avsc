@@ -1,0 +1,29 @@
+{
+  "type": "record",
+  "name": "ScenarioConditionAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Условие активации сценария умного дома",
+  "fields": [
+    {
+      "name": "sensor_id",
+      "type": "string",
+      "doc": "Идентификатор датчика, показания которого проверяются в условии"
+    },
+    {
+      "name": "type",
+      "type": "ConditionTypeAvro",
+      "doc": "Тип проверяемого условия"
+    },
+    {
+      "name": "operation",
+      "type": "ConditionOperationAvro",
+      "doc": "Оператор сравнения"
+    },
+    {
+      "name": "value",
+      "type": ["null", "int", "boolean"],
+      "default": null,
+      "doc": "Значение для сравнения. null — если условие не требует значения (например, MOTION). int или boolean — в зависимости от типа датчика"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "DeviceAddedEventAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Событие добавления нового устройства в хаб",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "doc": "Уникальный идентификатор устройства"
+    },
+    {
+      "name": "type",
+      "type": "DeviceTypeAvro",
+      "doc": "Тип добавленного устройства"
+    }
+  ]
+}

@@ -12,9 +12,11 @@
     <artifactId>avro-schemas</artifactId>
 
     <dependencies>
+        <!-- Avro runtime — оставляем только одну запись без дублирования -->
         <dependency>
             <groupId>org.apache.avro</groupId>
             <artifactId>avro</artifactId>
+            <version>1.11.3</version>
         </dependency>
 
         <dependency>
@@ -38,12 +40,36 @@
                         <id>schemas</id>
                         <phase>generate-sources</phase>
                         <goals>
-                            <goal>idl-protocol</goal>
+                            <goal>schema</goal>
                         </goals>
                         <configuration>
                             <sourceDirectory>${project.basedir}/src/main/avro/</sourceDirectory>
                             <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
                             <stringType>String</stringType>
+
+                            <imports>
+                                <import>${project.basedir}/src/main/avro/telemetry/event/DeviceTypeAvro.avsc</import>
+                                <import>${project.basedir}/src/main/avro/telemetry/event/ConditionTypeAvro.avsc</import>
+                                <import>${project.basedir}/src/main/avro/telemetry/event/ConditionOperationAvro.avsc</import>
+                                <import>${project.basedir}/src/main/avro/telemetry/event/ActionTypeAvro.avsc</import>
+
+                                <!-- 2. Простые записи датчиков -->
+                                <import>${project.basedir}/src/main/avro/telemetry/event/ClimateSensorAvro.avsc</import>
+                                <import>${project.basedir}/src/main/avro/telemetry/event/LightSensorAvro.avsc</import>
+                                <import>${project.basedir}/src/main/avro/telemetry/event/MotionSensorAvro.avsc</import>
+                                <import>${project.basedir}/src/main/avro/telemetry/event/SwitchSensorAvro.avsc</import>
+                                <import>${project.basedir}/src/main/avro/telemetry/event/TemperatureSensorAvro.avsc</import>
+
+                                <!-- 3. Простые записи хаба — ссылаются на enum'ы -->
+                                <import>${project.basedir}/src/main/avro/telemetry/event/DeviceAddedEventAvro.avsc</import>
+                                <import>${project.basedir}/src/main/avro/telemetry/event/DeviceRemovedEventAvro.avsc</import>
+                                <import>${project.basedir}/src/main/avro/telemetry/event/ScenarioConditionAvro.avsc</import>
+                                <import>${project.basedir}/src/main/avro/telemetry/event/DeviceActionAvro.avsc</import>
+
+                                <!-- 4. Составные записи — ссылаются на простые -->
+                                <import>${project.basedir}/src/main/avro/telemetry/event/ScenarioAddedEventAvro.avsc</import>
+                                <import>${project.basedir}/src/main/avro/telemetry/event/ScenarioRemovedEventAvro.avsc</import>
+                            </imports>
                         </configuration>
                     </execution>
                 </executions>
@@ -70,5 +96,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>

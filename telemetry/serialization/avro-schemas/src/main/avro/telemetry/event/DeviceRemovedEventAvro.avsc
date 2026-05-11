@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "name": "DeviceRemovedEventAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Событие удаления устройства из хаба",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "doc": "Уникальный идентификатор удалённого устройства"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "name": "ClimateSensorAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Данные климатического датчика: температура, влажность, CO2",
+  "fields": [
+    {
+      "name": "temperature_c",
+      "type": "int",
+      "doc": "Температура в градусах Цельсия"
+    },
+    {
+      "name": "humidity",
+      "type": "int",
+      "doc": "Уровень влажности в процентах"
+    },
+    {
+      "name": "co2_level",
+      "type": "int",
+      "doc": "Уровень углекислого газа в ppm"
+    }
+  ]
+}

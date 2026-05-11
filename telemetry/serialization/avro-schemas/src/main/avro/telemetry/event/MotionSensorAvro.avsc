@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "name": "MotionSensorAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Данные датчика движения",
+  "fields": [
+    {
+      "name": "link_quality",
+      "type": "int",
+      "doc": "Качество сигнала связи с хабом (0-100)"
+    },
+    {
+      "name": "motion",
+      "type": "boolean",
+      "doc": "true — движение обнаружено, false — движения нет"
+    },
+    {
+      "name": "voltage",
+      "type": "int",
+      "doc": "Уровень напряжения питания датчика в милливольтах"
+    }
+  ]
+}

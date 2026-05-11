@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "name": "ScenarioRemovedEventAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Событие удаления сценария умного дома",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "Название удалённого сценария"
+    }
+  ]
+}

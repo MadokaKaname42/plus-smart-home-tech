@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "name": "SwitchSensorAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Данные датчика-переключателя (выключатель света, умная розетка и т.п.)",
+  "fields": [
+    {
+      "name": "state",
+      "type": "boolean",
+      "doc": "Текущее состояние: true — включено, false — выключено"
+    }
+  ]
+}

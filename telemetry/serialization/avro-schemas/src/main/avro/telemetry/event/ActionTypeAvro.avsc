@@ -1,0 +1,12 @@
+{
+  "type": "enum",
+  "name": "ActionTypeAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Типы действий, выполняемых устройствами при срабатывании сценария",
+  "symbols": [
+    "ACTIVATE",
+    "DEACTIVATE",
+    "INVERSE",
+    "SET_VALUE"
+  ]
+}

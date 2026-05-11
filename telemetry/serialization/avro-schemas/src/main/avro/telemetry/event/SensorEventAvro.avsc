@@ -1,0 +1,37 @@
+{
+  "type": "record",
+  "name": "SensorEventAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Корневое событие датчика. Это то, что реально кладётся в Kafka топик telemetry.sensors.v1. Содержит общие поля (id датчика, хаб, время) + payload с показаниями конкретного типа датчика",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "doc": "Идентификатор датчика"
+    },
+    {
+      "name": "hubId",
+      "type": "string",
+      "doc": "Идентификатор хаба, к которому подключён датчик"
+    },
+    {
+      "name": "timestamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "Временная метка события в миллисекундах"
+    },
+    {
+      "name": "payload",
+      "type": [
+        "ClimateSensorAvro",
+        "LightSensorAvro",
+        "MotionSensorAvro",
+        "SwitchSensorAvro",
+        "TemperatureSensorAvro"
+      ],
+      "doc": "Показания датчика. Конкретный тип определяется автоматически при сериализации"
+    }
+  ]
+}

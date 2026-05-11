@@ -1,0 +1,14 @@
+{
+  "type": "enum",
+  "name": "ConditionTypeAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Типы условий, которые могут использоваться в сценариях умного дома",
+  "symbols": [
+    "MOTION",
+    "LUMINOSITY",
+    "SWITCH",
+    "TEMPERATURE",
+    "CO2LEVEL",
+    "HUMIDITY"
+  ]
+}
