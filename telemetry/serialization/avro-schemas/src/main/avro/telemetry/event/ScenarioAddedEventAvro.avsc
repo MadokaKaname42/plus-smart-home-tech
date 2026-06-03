@@ -1,0 +1,29 @@
+{
+  "type": "record",
+  "name": "ScenarioAddedEventAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Событие добавления нового сценария умного дома",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "Уникальное название сценария в рамках хаба"
+    },
+    {
+      "name": "conditions",
+      "type": {
+        "type": "array",
+        "items": "ScenarioConditionAvro"
+      },
+      "doc": "Набор условий, при которых сценарий активируется"
+    },
+    {
+      "name": "actions",
+      "type": {
+        "type": "array",
+        "items": "DeviceActionAvro"
+      },
+      "doc": "Набор действий, выполняемых при активации сценария"
+    }
+  ]
+}

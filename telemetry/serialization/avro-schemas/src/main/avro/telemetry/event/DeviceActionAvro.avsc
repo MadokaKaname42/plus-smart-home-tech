@@ -1,0 +1,24 @@
+{
+  "type": "record",
+  "name": "DeviceActionAvro",
+  "namespace": "ru.yandex.practicum.kafka.telemetry.event",
+  "doc": "Действие, выполняемое устройством при срабатывании сценария",
+  "fields": [
+    {
+      "name": "sensor_id",
+      "type": "string",
+      "doc": "Идентификатор устройства, которое должно выполнить действие"
+    },
+    {
+      "name": "type",
+      "type": "ActionTypeAvro",
+      "doc": "Тип выполняемого действия"
+    },
+    {
+      "name": "value",
+      "type": ["null", "int"],
+      "default": null,
+      "doc": "Числовое значение для действия SET_VALUE. Для остальных типов действий — null"
+    }
+  ]
+}
