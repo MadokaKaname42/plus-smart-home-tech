@@ -1,26 +1,25 @@
-package main.ru.yandex.practicum.collector.schemas.hubEvent;
+package ru.yandex.practicum.collector.schemas.hub;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
-import main.ru.yandex.practicum.collector.enums.HubEventType;
+import ru.yandex.practicum.collector.enums.HubEventType;
 
-import java.util.List;
+import java.util.ArrayList;
 
-@Getter @Setter @ToString(callSuper = true)
-public class ScenarioAddedEvent extends HubEvent {
+@Getter
+@ToString(callSuper = true)
+public class ScenarioAddedEvent extends BaseHubEvent {
+
     @NotBlank
     @Size(min = 3)
     private String name;
-
     @NotEmpty
-    private List<ScenarioCondition> conditions;
-
+    private ArrayList<ScenarioCondition> conditions;
     @NotEmpty
-    private List<DeviceAction> actions;
+    private ArrayList<DeviceAction> actions;
 
     @Override
     public HubEventType getType() {

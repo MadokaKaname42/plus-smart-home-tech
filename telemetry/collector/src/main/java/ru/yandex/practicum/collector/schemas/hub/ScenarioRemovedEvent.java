@@ -1,14 +1,15 @@
-package main.ru.yandex.practicum.collector.schemas.hubEvent;
+package ru.yandex.practicum.collector.schemas.hub;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
-import main.ru.yandex.practicum.collector.enums.HubEventType;
+import ru.yandex.practicum.collector.enums.HubEventType;
 
-@Getter @Setter @ToString(callSuper = true)
-public class ScenarioRemovedEvent extends HubEvent {
+@Getter
+@ToString(callSuper = true)
+public class ScenarioRemovedEvent extends BaseHubEvent {
+
     @NotBlank
     @Size(min = 3)
     private String name;

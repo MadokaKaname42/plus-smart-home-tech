@@ -1,8 +1,0 @@
-package main.ru.yandex.practicum.collector.enums;
-
-public enum ActionType {
-    ACTIVATE,
-    DEACTIVATE,
-    INVERSE,
-    SET_VALUE
-}
